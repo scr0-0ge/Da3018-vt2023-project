@@ -2,7 +2,7 @@
 Project: a genome assembly graph <br />
 **Here is how you run the code:** <br />
 **1. javac GenomeAssemblyGraph.java** <br />
-**2. java -Xss1G -Xms25G GenomeAssemblyGraph ** <br />
+**2. java -Xss1G -Xms25G GenomeAssemblyGraph** <br />
 
 **Note1**:<br />
 you should change xms number into a number that your pc supports, I have 64gb ram so that why I can give it 25gb.<br />
