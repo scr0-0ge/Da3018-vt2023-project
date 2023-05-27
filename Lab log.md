@@ -1,5 +1,43 @@
 # **Here is rework version**
 
+We got some bad news.
+1. We cant use python on the data part, only java, this means we need do some rework.
+2. Visualize the Graph part are allowed to use python 
+We need do some rework on our project.
+---
+
+---
+
+# Day 0 Lab Log
+
+## Date: (26th May 2023)
+
+### Objective
+Efficiently handle large genome assembly data, calculate node degree distribution and print the results in Java.
+
+### Work Done:
+
+#### Contig Class Creation
+We started by defining a Contig class to represent each node (contig) in the graph. Each Contig has an integer 'length' and a set of 'overlaps'. The 'overlaps' set stores the hashCodes of the IDs of the other contigs that overlap with the current one. 
+
+#### GenomeAssemblyGraph Class Creation
+Next, we defined a GenomeAssemblyGraph class to hold all the Contigs. This class has a private attribute, 'contigMap', which is a HashMap that maps the ID of each contig to the corresponding Contig object.
+
+#### Data Reading and Processing
+In the GenomeAssemblyGraph class, we implemented a 'readData' method which reads in the data from the input file line by line. For each line, it splits the line into parts, extracts the contig IDs and their lengths, and creates Contig objects for each new contig. It also stores the overlaps between contigs by adding the hashCode of the overlapping contig's ID to the 'overlaps' set of each contig.
+
+#### Degree Distribution Calculation
+We also implemented a 'printDegreeDistribution' method in the GenomeAssemblyGraph class. This method first creates a HashMap, 'degreeDist', to store the distribution of node degrees in the graph. It then iterates over all the contigs in 'contigMap' and calculates the degree of each contig as the size of its 'overlaps' set. The degree of each contig and its count is then printed out.
+
+#### Main Method Execution
+Finally, in the main method, we created an instance of GenomeAssemblyGraph, read in the data, and printed the degree distribution. The output shows the degree of each node and the count of nodes with that degree.
+
+### Performance Optimization Attempts
+The usage of 'hashCode' for storing the overlaps in an integer set instead of the actual String ID significantly reduces the memory footprint. Moreover, the usage of BufferedReader for file reading helps manage system resources efficiently, given that it reads text from a character-input stream, buffering characters to provide efficient reading of characters, arrays, and lines.
+
+### Next Steps
+Export them into csv format and use python to create a graph.
+
 
 ---
 # **Here is old lab log**
@@ -36,7 +74,7 @@ Rewrite the code with multi thread in mind. Or consider buying a new GPU and exp
 
 ---
 # Day 1 Lab Log
-## Date: (20th May 2023)
+## Date: (22nd May 2023)
 
 ### Objective
 Objective: Revising the approach to efficiently preprocess the large contig overlap dataset with Python, with a focus on parallelization.
@@ -72,7 +110,7 @@ In todays work, we encountered a significant challenge related to memory usage w
 
 ---
 # Day 2 Lab Log
-## Date: (21th May 2023)
+## Date: (24th May 2023)
 
 ### Objective
 1. Based on the issues encountered in our previous attempt, we gave up on the multithreading approach and went back to the single-threaded approach.
@@ -98,9 +136,10 @@ The connected components of the graph were found, and the number of components w
 For each connected component, the density (the ratio of the number of edges to the number of possible edges) was calculated. A histogram of these densities was then plotted.
 
 
-
 ### Results:
 The genome assembly graph consisted of **11380820 vertices** and **63962895 edges**. There were **273187 connected components with at least three vertices**. The density of the components varied widely, as shown in the density histogram.
 
-
 # End of the log
+
+
+
