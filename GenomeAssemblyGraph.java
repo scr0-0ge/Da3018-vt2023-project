@@ -41,22 +41,42 @@ public class GenomeAssemblyGraph {
         }
     }
 
-    public void printDegreeDistribution() {
+    public void printDegreeDistribution(String outputPath) {
         Map<Integer, Integer> degreeDist = new HashMap<>();
         for (Contig contig : contigMap.values()) {
             int degree = contig.overlaps.size();
             degreeDist.put(degree, degreeDist.getOrDefault(degree, 0) + 1);
         }
-
-        for (Map.Entry<Integer, Integer> entry : degreeDist.entrySet()) {
-            System.out.println("Degree: " + entry.getKey() + ", Count: " + entry.getValue());
+    
+        // Writing to csv file
+        try (PrintWriter writer = new PrintWriter(new File(outputPath))) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("Degree");
+            sb.append(',');
+            sb.append("Count");
+            sb.append('\n');
+    
+            for (Map.Entry<Integer, Integer> entry : degreeDist.entrySet()) {
+                sb.append(entry.getKey());
+                sb.append(',');
+                sb.append(entry.getValue());
+                sb.append('\n');
+            }
+    
+            writer.write(sb.toString());
+    
+            System.out.println("Degree distribution data written to file: " + outputPath);
+    
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
         }
     }
+    
 
     public static void main(String[] args) {
         GenomeAssemblyGraph g = new GenomeAssemblyGraph();
         g.readData("G:\\project\\Da3018-vt2023-project\\Spruce_fingerprint_2017-03-10_16.48.olp.m4");
-        g.printDegreeDistribution();
+        g.printDegreeDistribution("G:\\project\\Da3018-vt2023-project\\github\\DegreeDistribution.csv");
         // Further processing...
     }
 }
