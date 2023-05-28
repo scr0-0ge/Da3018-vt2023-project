@@ -1,15 +1,46 @@
 # **Here is rework version**
 
+
+
+---
+# Day 1 Lab Log
+
+## Date: (27th May 2023)
+
+### Objective
+Export degree distribution to a csv file and create a visualization using Python.
+
+### Work Done:
+
+#### Export Degree Distribution to CSV
+We modified the 'printDegreeDistribution' method in the GenomeAssemblyGraph class to not only calculate the degree distribution but also write it to a csv file. This method creates a StringBuilder and appends the degree and count for each entry in the 'degreeDist' HashMap, formatted as a csv file. It then uses a PrintWriter to write the StringBuilder's contents to a specified output file.
+
+#### Degree Distribution Visualization
+We wrote a Python script to read in the degree distribution csv file using pandas. It creates a bar plot of the degree distribution using matplotlib, with the degree on the x-axis and the count on the y-axis. This provides a visual representation of the degree distribution, making it easier to see the most common degrees and the general distribution.
+
+#### Main Method Execution
+In the main method of the GenomeAssemblyGraph class, we specified an output file path for the 'printDegreeDistribution' method. After the data was read in and the degree distribution was calculated, it was written to this output file. 
+
+### Performance Optimization Attempts
+Exporting the degree distribution to a csv file allows us to handle large amounts of data more efficiently. It also enables us to use more powerful tools for analyzing the data, such as Python's pandas and matplotlib libraries for data analysis and visualization.
+
+### Issues and Concerns
+No significant issues or concerns were encountered during this process. 
+
+### Next Steps
+In the next step, we will be facing assignment 2, The number of components of G with at least three vertices.
+
+Lets see how that will go.
+
+
+
+---
 We got some bad news.
 1. We cant use python on the data part, only java, this means we need do some rework.
 2. Visualize the Graph part are allowed to use python 
 
 
 We need do some rework on our project.
-
----
-
----
 
 # Day 0 Lab Log
 
@@ -39,7 +70,7 @@ Finally, in the main method, we created an instance of GenomeAssemblyGraph, read
 The usage of 'hashCode' for storing the overlaps in an integer set instead of the actual String ID significantly reduces the memory footprint. Moreover, the usage of BufferedReader for file reading helps manage system resources efficiently, given that it reads text from a character-input stream, buffering characters to provide efficient reading of characters, arrays, and lines.
 
 ### Next Steps
-Export them into csv format and use python to create a graph.
+The degree distribution data we got is essentially a histogram that shows the frequency of each degree (number of overlaps), next step is eport them into csv format and use python to create a visualized graph.
 
 
 ---
