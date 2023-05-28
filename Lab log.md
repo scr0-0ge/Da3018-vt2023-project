@@ -3,6 +3,8 @@
 We got some bad news.
 1. We cant use python on the data part, only java, this means we need do some rework.
 2. Visualize the Graph part are allowed to use python 
+
+
 We need do some rework on our project.
 ---
 
