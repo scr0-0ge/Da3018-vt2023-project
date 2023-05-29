@@ -1,6 +1,37 @@
 # **Here is rework version**
 
+# Day 2 Lab Log
 
+## Date: (28th May 2023)
+
+### Objective
+Refine overlap calculations and calculate the number of connected components with at least three vertices in the genome assembly graph.
+
+### Work Done:
+
+#### Overlap Calculation Refinement
+We modified the 'readData' method to calculate the overlap length in both contigs. For each pair of overlapping contigs, if the overlap length is at least 1000 in both sequences, the overlap is recorded.
+
+#### Contig Class Update
+We updated the Contig class to include a 'visited' attribute, which is used in the depth-first search (DFS) algorithm.
+
+#### DFS Implementation for Connected Components Calculation
+We implemented a private 'dfs' method in the GenomeAssemblyGraph class. This method takes a contig ID as input and performs a DFS starting from that contig, marking each visited contig along the way and returning the size of the connected component.
+
+#### Calculation of Components with At Least Three Vertices
+We added a 'getComponentsWithAtLeastThreeVertices' method to the GenomeAssemblyGraph class. This method iterates over all contigs in 'contigMap'. For each unvisited contig, it performs a DFS to find the size of the connected component and increments a count if the size is at least three.
+
+#### Main Method Execution
+In the main method, we created an instance of GenomeAssemblyGraph, read in the data, printed the degree distribution, and calculated and printed the number of components with at least three vertices.
+
+### Performance Optimization Attempts
+The usage of a DFS algorithm to calculate the number of connected components is an efficient approach for such a task on a large genome assembly graph.
+
+### Issues and Concerns
+No significant issues or concerns were encountered during this process.
+
+### Next Steps
+Try to calculate component densities and written data to csv file
 
 ---
 # Day 1 Lab Log
