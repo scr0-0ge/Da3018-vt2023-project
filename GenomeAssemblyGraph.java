@@ -87,9 +87,11 @@ public class GenomeAssemblyGraph {
         Map<Integer, Integer> degreeDist = new HashMap<>();
         for (Contig contig : contigMap.values()) {
             int degree = contig.overlaps.size();
-            degreeDist.put(degree, degreeDist.getOrDefault(degree, 0) + 1);
+            if (degree > 0) { // Ignore contigs that do not overlap with any other contig
+                degreeDist.put(degree, degreeDist.getOrDefault(degree, 0) + 1);
+            }
         }
-
+    
         // Writing to csv file
         try (PrintWriter writer = new PrintWriter(new File(outputPath))) {
             StringBuilder sb = new StringBuilder();
@@ -97,28 +99,89 @@ public class GenomeAssemblyGraph {
             sb.append(',');
             sb.append("Count");
             sb.append('\n');
-
+    
             for (Map.Entry<Integer, Integer> entry : degreeDist.entrySet()) {
                 sb.append(entry.getKey());
                 sb.append(',');
                 sb.append(entry.getValue());
                 sb.append('\n');
             }
-
+    
             writer.write(sb.toString());
-
+    
             System.out.println("Degree distribution data written to file: " + outputPath);
+    
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+       
 
+    private int countEdges(String id) {
+        Contig contig = contigMap.get(id);
+        int edges = contig.overlaps.size();
+        contig.visited = true;
+    
+        for (String neighborId : contig.overlaps) {
+            if (!contigMap.get(neighborId).visited) {
+                edges += countEdges(neighborId);
+            }
+        }
+    
+        return edges / 2; // each edge was counted twice
+    }
+    
+    public void computeComponentDensities(String outputPath) {
+        try (PrintWriter writer = new PrintWriter(new File(outputPath))) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("Component");
+            sb.append(',');
+            sb.append("Density");
+            sb.append('\n');
+    
+            int componentNumber = 1;
+    
+            for (String id : contigMap.keySet()) {
+                if (!contigMap.get(id).visited) {
+                    int vertices = dfs(id);
+                    int edges = countEdges(id);
+    
+                    // Compute density
+                    if (vertices > 1) { // avoid division by zero
+                        double density = (double) 2 * edges / (vertices * (vertices - 1));
+                        sb.append("Component_" + componentNumber);
+                        sb.append(',');
+                        sb.append(density);
+                        sb.append('\n');
+    
+                        componentNumber++;
+                    }
+                }
+            }
+    
+            writer.write(sb.toString());
+            System.out.println("Component densities written to file: " + outputPath);
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
     }
     
 
+    public void resetVisited() {
+        for (Contig contig : contigMap.values()) {
+            contig.visited = false;
+        }
+    }
+    
+    
+
+
     public static void main(String[] args) {
         GenomeAssemblyGraph g = new GenomeAssemblyGraph();
         g.readData("G:\\project\\Da3018-vt2023-project\\Spruce_fingerprint_2017-03-10_16.48.olp.m4");
-        g.printDegreeDistribution("G:\\project\\Da3018-vt2023-project\\github\\DegreeDistribution.csv");
+        g.printDegreeDistribution("G:\\project\\Da3018-vt2023-project\\DegreeDistribution.csv");
+        g.computeComponentDensities("G:\\project\\Da3018-vt2023-project\\ComponentDensities.csv");
+        g.resetVisited();
         int componentCount = g.getComponentsWithAtLeastThreeVertices();
         System.out.println("The number of components with at least three vertices: " + componentCount);
     }
