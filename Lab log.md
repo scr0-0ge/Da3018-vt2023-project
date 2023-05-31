@@ -100,16 +100,7 @@ In the next step, we will be facing assignment 2, The number of components of G 
 
 Lets see how that will go.
 
-
-
 ---
-We got some bad news.
-1. We cant use python on the data part, only java, this means we need do some rework.
-2. Visualize the Graph part are allowed to use python 
-
-
-We need do some rework on our project.
-
 # Day 0 Lab Log
 
 ## Date: (26th May 2023)
@@ -143,6 +134,14 @@ The degree distribution data we got is essentially a histogram that shows the fr
 
 ---
 # **Here is old lab log**
+
+
+We got some bad news.
+1. We cant use python on the data part, only java, this means we need do some rework.
+2. Visualize the Graph part are allowed to use python 
+
+We need to do rework on our project.
+
 
 ---
 # Day 0 Lab Log
