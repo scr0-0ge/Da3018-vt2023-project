@@ -1,4 +1,41 @@
-# **Here is rework version**
+# **Here is reworked version**
+
+# Day 3 Lab Log
+
+## Date: (31th May 2023)
+
+### Objective
+The goal for today is to calculate the Component densities and written to a csv file, also adjusting our degree distribution computation to ignore contigs that do not overlap with any other contig.
+
+### Work Done:
+
+#### Degree Distribution Adjustment
+We've updated the 'printDegreeDistribution' method to ignore contigs that do not overlap with any other contig. This helps to give us a more meaningful degree distribution since contigs with no overlaps are not relevant for the distribution.
+
+#### Edge Count Calculation
+We added a private method 'countEdges' that calculates the number of edges in a connected component. The method uses DFS and counts the size of the overlap sets for each contig. Since each edge is counted twice, once for each of its endpoints, the method returns half of the total count. This method also sets the 'visited' attribute for each contig it visits.
+
+#### Component Density Calculation
+We implemented a 'computeComponentDensities' method that calculates the density of each connected component in the graph and writes the results to a csv file. The density of a component is computed as the ratio of the number of edges to the maximum possible number of edges for a graph with the same number of vertices, which is `(vertices * (vertices - 1)) / 2`. Note that this computation is only done for components with at least two vertices to avoid division by zero.
+
+#### Visited Flag Reset
+We added a 'resetVisited' method that resets the 'visited' attribute of all contigs to false. This method is necessary because we are performing multiple traversals of the graph, and we need to reset the 'visited' attributes in between traversals.
+
+#### Main Method Execution
+In the main method, we added a call to 'computeComponentDensities' to compute the component densities after reading the data and printing the degree distribution. We also added a call to 'resetVisited' before computing the number of components with at least three vertices to ensure the 'visited' attributes are correctly set for this computation.
+
+### Performance Optimization Attempts
+The use of a DFS algorithm for counting edges and computing component densities is an efficient approach given the data structure of our problem. The 'resetVisited' function helps ensure that our DFS runs correctly multiple times.
+
+### Issues and Concerns
+version 1 gave us component densities and at the same time written data to a csv file, but this version gave us the number of components of G with at least three vertices =0
+
+### Next Steps
+visualize the graph with python, do Unit Testing if necessary.
+
+
+
+---
 
 # Day 2 Lab Log
 
