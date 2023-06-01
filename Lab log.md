@@ -1,7 +1,7 @@
 # **Here is reworked version**
 # Day 4 Lab Log
 
-## Date: (29th May 2023)
+## Date: (1th june 2023)
 
 ### Objective
 The goal for today is to generate visualizations of the component densities and degree distributions of the genome assembly graph that we have been studying. This will give us more insight into the characteristics of the graph and help us understand its structure.
