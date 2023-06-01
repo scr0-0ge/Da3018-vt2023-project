@@ -1,4 +1,38 @@
 # **Here is reworked version**
+# Day 4 Lab Log
+
+## Date: (29th May 2023)
+
+### Objective
+The goal for today is to generate visualizations of the component densities and degree distributions of the genome assembly graph that we have been studying. This will give us more insight into the characteristics of the graph and help us understand its structure.
+
+### Work Done:
+
+#### Histogram of Component Densities
+We have loaded the component densities data from a csv file and plotted a histogram using matplotlib. This histogram will show the distribution of component densities in the genome assembly graph. 
+
+#### Degree Distribution Plot
+We have also loaded the degree distribution data and plotted a bar chart using matplotlib. This bar chart shows the distribution of degrees (number of overlaps) in the contigs of the genome assembly graph. 
+
+We have also added a histogram to the degree distribution plot to show the distribution in a different format. In this histogram, the height of each bar represents the number of contigs with a degree falling into the corresponding bin.
+
+### Performance Optimization Attempts
+No specific performance optimization attempts were required for today's work, as the focus was mainly on data visualization, and the used data structures and libraries (Pandas and Matplotlib) are generally efficient for these purposes.
+
+### Issues and Concerns
+No major issues or concerns were encountered today. However, it's important to ensure that the csv files are correctly formatted and located in the specified path for data loading to work correctly.
+
+### Next Steps
+Make a lab report
+
+### Talks
+Due to lack of a standard answer in project description, we won't be able to know if our answer is 100% correct. But the program runs well and if we didn't misunderstand the description, then I have 96% confidence on the current process on this project. 
+
+If nothing goes horribly wrong then next lab note will be the final nail on the coffin.
+
+
+
+---
 
 # Day 3 Lab Log
 
