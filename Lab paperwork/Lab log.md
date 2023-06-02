@@ -17,7 +17,7 @@ Later print out the numbers.
 #### Lab report
 Details can be found in Lab report.
 
-### Upload all csv file
+#### Upload all csv file
 After some searching in github I found some predecessors repositories. 
 
 Even though I didn't found a comparable "correct answer" for our project, it seems like apart from upload 2 visualized graph, upload 2 csv file is apparently also a thing. 
