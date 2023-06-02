@@ -34,13 +34,9 @@ public class GenomeAssemblyGraph {
                 int overlapLength1 = Integer.parseInt(parts[6]) - Integer.parseInt(parts[5]);
                 int overlapLength2 = Integer.parseInt(parts[10]) - Integer.parseInt(parts[9]);
     
-                // Store contigs in the map if they are not already present
-                if (!contigMap.containsKey(id1)) {
-                    contigMap.put(id1, new Contig(length1));
-                }
-                if (!contigMap.containsKey(id2)) {
-                    contigMap.put(id2, new Contig(length2));
-                }
+                // Create new contigs if they are not already present
+                contigMap.putIfAbsent(id1, new Contig(length1));
+                contigMap.putIfAbsent(id2, new Contig(length2));
     
                 // If overlap length is at least 1000 in both sequences, add overlap
                 if (overlapLength1 >= 1000 && overlapLength2 >= 1000) {
@@ -52,6 +48,7 @@ public class GenomeAssemblyGraph {
             e.printStackTrace();
         }
     }
+    
     
 
     public int getComponentsWithAtLeastThreeVertices() {
@@ -82,6 +79,18 @@ public class GenomeAssemblyGraph {
 
         return size;
     }
+
+    public int getTotalVertices() {
+        return contigMap.size();
+    }
+    
+    public int getTotalEdges() {
+        int totalEdges = 0;
+        for (Contig contig : contigMap.values()) {
+            totalEdges += contig.overlaps.size();
+        }
+        return totalEdges / 2; // each edge was counted twice
+    }    
 
     public void printDegreeDistribution(String outputPath) {
         Map<Integer, Integer> degreeDist = new HashMap<>();
@@ -172,7 +181,8 @@ public class GenomeAssemblyGraph {
             contig.visited = false;
         }
     }
-    
+
+
     
 
 
@@ -184,5 +194,7 @@ public class GenomeAssemblyGraph {
         g.resetVisited();
         int componentCount = g.getComponentsWithAtLeastThreeVertices();
         System.out.println("The number of components with at least three vertices: " + componentCount);
-    }
+        System.out.println("Total number of vertices: " + g.getTotalVertices());
+        System.out.println("Total number of edges: " + g.getTotalEdges());
+    }    
 }
