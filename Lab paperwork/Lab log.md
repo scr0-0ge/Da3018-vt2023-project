@@ -1,4 +1,35 @@
 # **Here is reworked version**
+
+# Day 5 Lab Log
+
+## Date: (2th june 2023)
+
+### Objective
+1. Calculate and print out total number of vertices and edges
+2. Make lab report
+3. Upload all csv file
+### Work Done:
+
+#### Vertices and edges
+I decide to add public int getTotalVertices and public int getTotalEdges so the code calculate total number of vertices and edges.
+Later print out the numbers.
+
+#### Lab report
+Details can be found in Lab report.
+
+### Upload all csv file
+After some searching in github I found some predecessors repositories. 
+
+Even though I didn't found a comparable "correct answer" for our project, it seems like apart from upload 2 visualized graph, upload 2 csv file is apparently also a thing. 
+Soooo.... I decide to upload both of them.
+
+### Next Steps
+This probably will be the final shot.
+
+
+---
+
+
 # Day 4 Lab Log
 
 ## Date: (1th june 2023)
@@ -163,7 +194,7 @@ Finally, in the main method, we created an instance of GenomeAssemblyGraph, read
 The usage of 'hashCode' for storing the overlaps in an integer set instead of the actual String ID significantly reduces the memory footprint. Moreover, the usage of BufferedReader for file reading helps manage system resources efficiently, given that it reads text from a character-input stream, buffering characters to provide efficient reading of characters, arrays, and lines.
 
 ### Next Steps
-The degree distribution data we got is essentially a histogram that shows the frequency of each degree (number of overlaps), next step is eport them into csv format and use python to create a visualized graph.
+The degree distribution data we got is essentially a histogram that shows the frequency of each degree (number of overlaps), next step is export them into csv format and use python to create a visualized graph.
 
 
 ---
