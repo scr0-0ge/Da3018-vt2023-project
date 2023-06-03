@@ -24,7 +24,7 @@ Even though I didn't found a comparable "correct answer" for our project, it see
 Soooo.... I decide to upload both of them.
 
 ### Next Steps
-This probably will be the final shot.
+This log probably will be the final shot.
 
 
 ---
