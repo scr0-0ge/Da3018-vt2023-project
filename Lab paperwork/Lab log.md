@@ -59,10 +59,12 @@ Total number of vertices: 11393435
 Total number of edges: 63408137
 
 Here is Degree distribution graph
-![plot]([https://github.com/scr0-0ge/Da3018-vt2023-project/tree/Patch-5/Lab%20paperwork/Degree distribution graph.png](https://github.com/scr0-0ge/Da3018-vt2023-project/blob/Patch-5/Lab%20paperwork/Degree%20distribution%20graph.png))
+
+![plot]([https://github.com/scr0-0ge/Da3018-vt2023-project/blob/Patch-5/Lab%20paperwork/Degree%20distribution%20graph.png])
 
 Here is component density graph
-![plot]([https://github.com/scr0-0ge/Da3018-vt2023-project/tree/Patch-5/Lab%20paperwork/component density graph.png](https://github.com/scr0-0ge/Da3018-vt2023-project/blob/Patch-5/Lab%20paperwork/component%20density%20graph.png))
+
+![plot]([https://github.com/scr0-0ge/Da3018-vt2023-project/blob/Patch-5/Lab%20paperwork/component%20density%20graph.png])
 
 
 
