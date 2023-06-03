@@ -1,9 +1,9 @@
 # Da3018-vt2023-project
-Project: a genome assembly graph 
+Project: a genome assembly graph by Xingyi Chen
 
-Lab paperwork include lab log and lab report <br />
-all code include java file, python file and a short 1000 line test data for this project <br />
-all csv file inclide DegreeDistribution.csv and ComponentDensities.csv, you can use python file to visilize the graph <br />
+**Lab paperwork** include lab log and lab report <br />
+**all code** include java file, python file and a short 1000 line test data for this project <br />
+**all csv file** inclide DegreeDistribution.csv and ComponentDensities.csv, you can use python file to visilize the graph <br />
 
 **Here is how you run the code:** <br />
 **1. javac GenomeAssemblyGraph.java** <br />
