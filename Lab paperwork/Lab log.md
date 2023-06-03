@@ -53,6 +53,20 @@ No specific performance optimization attempts were required for today's work, as
 ### Issues and Concerns
 No major issues or concerns were encountered today. However, it's important to ensure that the csv files are correctly formatted and located in the specified path for data loading to work correctly.
 
+### Result:
+The number of components with at least three vertices: 273187
+Total number of vertices: 11393435
+Total number of edges: 63408137
+
+Here is Degree distribution graph
+![plot](https://github.com/scr0-0ge/Da3018-vt2023-project/tree/Patch-5/Lab%20paperwork/Degree distribution graph.png)
+
+Here is component density graph
+![plot](https://github.com/scr0-0ge/Da3018-vt2023-project/tree/Patch-5/Lab%20paperwork/component density graph.png)
+
+
+
+
 ### Next Steps
 Make a lab report
 
