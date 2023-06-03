@@ -1,4 +1,4 @@
-# Analysis of Genome Assembly Graph 
+# Lab report of project Genome Assembly Graph 
 
 ## Xingyi Chen, Vt2023
 
