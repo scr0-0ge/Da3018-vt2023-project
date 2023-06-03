@@ -50,17 +50,25 @@ Running our program with the given dataset, we found the following:
 - Total number of edges: 63,408,137
 
 
+And here are two graphs
+
+
+![1](https://github.com/scr0-0ge/Da3018-vt2023-project/blob/Patch-5/Lab%20paperwork/Degree%20distribution%20graph.png)
+![2](https://github.com/scr0-0ge/Da3018-vt2023-project/blob/Patch-5/Lab%20paperwork/component%20density%20graph.png)
+
+
+
 
 ## Discussion:
 Here are some personal rant
 
-You know, the first time I saw the grading part of the project description I was kinda surprised and frustrated. I didn't really know why solving the problem only gives 2 points, but right now I think I understand why that is the case.
+The first time I saw the grading part of the project description I was kinda surprised. I didn't really understand why solving the problem only gives 2 points, but right now I think I know why that is the case.
 
-So this morning I had a small chat with a few students in the class (and yes I know it is supposed to be an individual project even though it was never mentioned in the description, but I'm really queries about what result others had), and it seems everyone has vastly different methods and results. 
+So this morning I had a short conversation with few students in our class (and yes I know it is supposed to be an individual project even though it was never mentioned in the description, but I'm really queries about what result others had), and it seems that everyone uses vastly different methods and has vastly different results. 
 
-For the exemple there is one classmate who I'm not gonna mention his/her name uses a method that can lead to hash collisions. That is probably why we have different results.
-Given that we don't have a definite answer in the description, it is hard to say if any of us are even close to the correct answer. 
-It is probably for the best that the code part stays at a low weight when it comes to the grading.
+For the exemple there is one classmate who I'm not gonna mention his/her name uses a method that could lead to hash collisions. That is probably why we have different results.
+Given that we don't have a "definite answer" in the description, it is hard to say if any of us are even close to the correct answer. 
+It is probably for the best that the coding part stays at a low weight when it comes to the grading.
 
 Something I realized when I worked with this project is that java is very good optimized in the data aspect. 
 If you watched my old lab log you might notice that I tried to use python for this project, at that time I didn't realize that you can't use python for the data part of this project, but even if we are allowed, it would be a nightmare. 
@@ -73,18 +81,21 @@ It led to an extremely long process time before I even could get any result to c
 
 (yeah... future me here, Advice section of the project description clearly said that "Be sure to create small test files to test your code on. Doing your first experiments on the full graph is a waste of time." definitely should have watched that in the first place.)
 
-So I decided to implement multithreading. It is like I have to chopping a cake into multiple pieces and spoon feeding into their mouths, even after I did that many inconveniences still pops up.  
+So I decided to implement multithreading. The method I use is like chopping a cake into multiple pieces and spoon feeding into their mouths, however even after I did that many inconveniences still pops up.  
 
-For example there is one thing I still couldn't understand till this day, the data is 7gb and my ram is 64 gb, it is almost enough for me to put 10 identical data files into my ram. But when I started to process the data file, how in the world could it fill up the entire 64gb ram and cause my pc to freeze???
+For example there is few thing I still couldn't understand till this day, the data is 7gb and my ram is 64 gb, it is almost enough for me to put 10 identical data files into my ram. But when I started to process the data file, how in the world could it fill up the entire 64gb ram and cause my pc to freeze???
+Even after I fixed this problem by limiting the total number of data inside each chunks, the processing time takes much longer than the single threading.
+
+After all that I decide go back to the single threaded approach and rewriting everything with java instead.
 
 Remember the part in the lab log that I said "reworking is a bad news"?  
 Well lets just say java is much better at handling data in the comparison to python, it automatically utilize all of my cores and I can easily set a max range when it comes to how much ram it can use.
 But what python is good at is visualize the graph, in this area java is much worse than python at least in my opinion.
 
+(yeah... future me here again, technically Java doesn't automatically use all cores unless the code is explicitly written to do so, however this single threaded code did utilized all my cpu core for some magical reason.)
+![1](https://github.com/scr0-0ge/Da3018-vt2023-project/blob/Patch-5/Lab%20paperwork/single%20threaded%20code%20uses%2060%25%20of%20my%20cpu.PNG)
 
-
-
-
+But anyway I was having a blast with this project, hope my experience could help any smart successors in the future who actually searched Da3018 project in github.
 
 
 ## Conclusion:
