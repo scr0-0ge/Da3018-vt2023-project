@@ -8,7 +8,7 @@ Project: a genome assembly graph by Xingyi Chen
 **all csv file** inclide DegreeDistribution.csv and ComponentDensities.csv, you can use python file to visilize the graph <br />
 
 **Here is how you run the code:** <br />
-**1. javac GenomeAssemblyGraph.java**  (if it does not work try javac -encoding UTF8 GenomeAssemblyGraph.java) <br />  
+**1. javac GenomeAssemblyGraph.java**  (if it does not work try **javac -encoding UTF8 GenomeAssemblyGraph.java**) <br />  
 **2. java -Xss1G -Xms25G GenomeAssemblyGraph** <br />
 
 **Note1**:<br />
