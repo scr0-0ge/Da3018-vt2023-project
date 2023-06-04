@@ -2,9 +2,9 @@ import java.io.*;
 import java.util.*;
 
 class Contig {
-    int length;
-    Set<String> overlaps;
-    boolean visited;
+    int length; // The length of the contig.
+    Set<String> overlaps; // The set of contigs this contig overlaps with.
+    boolean visited; // Flag to keep track of whether this contig has been visited during a traversal
 
     public Contig(int length) {
         this.length = length;
@@ -14,12 +14,13 @@ class Contig {
 }
 
 public class GenomeAssemblyGraph {
+    // Map to hold contig information, using the contig's identifier as the key.
     private Map<String, Contig> contigMap; 
-
+    // Constructor to initialize the contig map.
     public GenomeAssemblyGraph() {
         contigMap = new HashMap<>();
     }
-
+    // Method to read data from the file and populate the contig map.
     public void readData(String fileName) {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
@@ -49,8 +50,7 @@ public class GenomeAssemblyGraph {
         }
     }
     
-    
-
+    // Method to get the number of components with at least three vertices.
     public int getComponentsWithAtLeastThreeVertices() {
         int count = 0;
 
@@ -65,7 +65,7 @@ public class GenomeAssemblyGraph {
 
         return count;
     }
-
+    // Perform a depth-first search (DFS) on the graph.
     private int dfs(String id) {
         Contig contig = contigMap.get(id);
         contig.visited = true;
@@ -79,11 +79,11 @@ public class GenomeAssemblyGraph {
 
         return size;
     }
-
+    // Method to get the total number of vertices in the graph.
     public int getTotalVertices() {
         return contigMap.size();
     }
-    
+    // Method to get the total number of edges in the graph.
     public int getTotalEdges() {
         int totalEdges = 0;
         for (Contig contig : contigMap.values()) {
@@ -91,7 +91,7 @@ public class GenomeAssemblyGraph {
         }
         return totalEdges / 2; // each edge was counted twice
     }    
-
+    // Method to print the degree distribution of the graph to a CSV file.
     public void printDegreeDistribution(String outputPath) {
         Map<Integer, Integer> degreeDist = new HashMap<>();
         for (Contig contig : contigMap.values()) {
@@ -125,7 +125,7 @@ public class GenomeAssemblyGraph {
         }
     }
        
-
+    // Private helper method to count the edges of a given contig (identified by its id).
     private int countEdges(String id) {
         Contig contig = contigMap.get(id);
         int edges = contig.overlaps.size();
@@ -139,7 +139,7 @@ public class GenomeAssemblyGraph {
     
         return edges / 2; // each edge was counted twice
     }
-    
+    // Method to compute the density of each component in the graph and write the results to a CSV file.
     public void computeComponentDensities(String outputPath) {
         try (PrintWriter writer = new PrintWriter(new File(outputPath))) {
             StringBuilder sb = new StringBuilder();
@@ -175,7 +175,7 @@ public class GenomeAssemblyGraph {
         }
     }
     
-
+    // Method to reset the "visited" flag for all contigs in the graph
     public void resetVisited() {
         for (Contig contig : contigMap.values()) {
             contig.visited = false;
@@ -185,7 +185,7 @@ public class GenomeAssemblyGraph {
 
     
 
-
+    // Main method to run the program.
     public static void main(String[] args) {
         GenomeAssemblyGraph g = new GenomeAssemblyGraph();
         g.readData("G:\\project\\Da3018-vt2023-project\\Spruce_fingerprint_2017-03-10_16.48.olp.m4");
