@@ -1,3 +1,4 @@
+# this is python code that I talked about in the old lablog, not a part of submission
 import pandas as pd
 import igraph as ig
 import collections
