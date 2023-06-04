@@ -84,6 +84,16 @@ Despite the challenges, I genuinely enjoyed working on this project. I hope that
 
 
 ## Conclusion:
-This analysis provides a comprehensive understanding of the genome assembly graph's structure. It points to the necessity for efficient algorithms that can manage and simplify these complex structures, which in turn could make genome assembly more feasible. 
 
+Reflecting upon my experiences in tackling this project, several key insights stand out, each bearing its own significance and implications for future work.
+
+Firstly, this project underlined the importance of choosing the right tool for a particular task. The divergence between Python's and Java's data handling capabilities was a significant finding. The former, despite its rich ecosystem of scientific libraries, faced challenges in terms of resource utilization. In contrast, Java was efficient in handling data, utilizing system resources optimally, and offered greater flexibility in managing RAM usage.
+
+However, this isn't to suggest that one language is categorically superior to the other. While Java proved better in data handling, Python showcased its strength in visualizing data, offering a richer toolkit for graphing and presentation of data. This serves as a crucial reminder of the importance of understanding the strengths and limitations of different programming languages and tools, and the necessity of choosing the right tool for a specific task.
+
+Looking forward, these findings could inform the choice of tools and strategies in similar projects. It would be interesting to explore whether these findings hold true for other types of data and tasks, and whether there are ways to combine the strengths of Python and Java in a single project.
+
+Additionally, future projects could explore more about multithreading and data processing. While my experience with Python's multithreading was not as efficient as I expected, it could be worthwhile to revisit this issue, explore in-depth how to optimize multithreading, and possibly uncover methods to enhance Python's performance in this regard.
+
+Finally, this project underscored the importance of continuous learning and adaptation in the field of data analysis. The challenges I encountered, and the solutions I found, serve as valuable lessons for the future, emphasizing the importance of being able to quickly adapt and apply different strategies when faced with unexpected challenges.
 
