@@ -58,36 +58,29 @@ And here are two graphs
 
 
 ## Discussion:
-Here are some personal rant
 
-The first time I saw the grading part of the project description I was kinda surprised. I didn't really understand why solving the problem only gives 2 points, but right now I think I know why that is the case.<br />
-So this morning I had a short conversation with few students in our class (and yes I know it is supposed to be an individual project even though it was never mentioned in the description, but I'm really queries about what result others had), and it seems that everyone uses vastly different methods and has vastly different results. <br />
-For the exemple there is one classmate who I'm not gonna mention his/her name uses a method that could lead to hash collisions. That is probably why we have different results.<br />
-Given that we don't have a "definite answer" in the description, it is hard to say if any of us are even close to the correct answer. <br />
-It is probably for the best that the coding part stays at a low weight when it comes to the grading.<br />
+Reflecting on this project, I was initially surprised by the grading scheme outlined in the project description. It puzzled me that solving the problem was only worth 2 points. However, after some thought, I believe I understand the rationale behind this.
 
-Something I realized when I worked with this project is that java is very good optimized in the data aspect. 
-If you watched my old lab log you might notice that I tried to use python for this project, at that time I didn't realize that you can't use python for the data part of this project, but even if we are allowed, it would be a nightmare. 
+In a brief discussion with my peers (mind you, I am aware that this was meant to be an individual project, though it wasn't explicitly stated in the description), I realized that our methodologies and results varied widely. For instance, one classmate used a method that potentially could result in hash collisions, which might explain the divergence in our findings. Given the absence of a "correct answer" in the project description, it's challenging to gauge the accuracy of our respective results. Thus, I can see why the coding part has a lower weighting in the overall grading.
 
-At the first glance python with its rich ecosystem of scientific libraries are perfect for such task, however I don't know if it was a spyder thing or it is a python thing (or maybe it’s just that I'm not skilled enough ),  but it seems like for python to utilize all available system resources takes extremely much manually tuning for it to be optimized. <br />
-Stuff like multithreading is just not a thing in python, for the exemple if we see original data as a cake, the ideal situation is that all of my 12 cpu cores start to eat that cake automatically. <br />
-But if I don't manually implement multithreading into my code there is like 1 core that is eating all the cake but the rest of the 11 core just stand there and watch him suffer. <br />
-It led to an extremely long process time before I even could get any result to continue my work.  <br />
-(yeah... future me here, Advice section of the project description clearly said that "Be sure to create small test files to test your code on. Doing your first experiments on the full graph is a waste of time." definitely should have watched that in the first place.)
+One significant revelation from this project was Java's optimization when handling data. You might have noticed from my old lab log that I initially attempted to use Python for this project. At that point, I was unaware that Python was unsuitable for the data part of this project. Even if Python were permissible, it would have proved to be quite the challenge.
 
-So I decided to implement multithreading. The method I use is like chopping a cake into multiple pieces and spoon feeding thoese pieces into their mouths, however even after I did that many inconveniences still pops up.  <br />
-For example there is few thing I still couldn't understand till this day, the data is 7gb and my ram is 64 gb, it is almost enough for me to put 10 identical data files into my ram. But when I started to process the data file, how in the world could it fill up the entire 64gb ram and cause my pc to freeze??? <br />
-Even after I fixed this problem by limiting the total number of data inside each chunks, the processing time takes much longer than the single threading.<br />
-After all that I decide go back to the single threaded approach and rewriting everything with java instead (because I didn't know that you have to fix the data part in java).<br />
+At first glance, Python, with its rich scientific library ecosystem, appears ideal for such tasks. However, I encountered issues related to resource utilization. I'm not sure whether it's a Python-specific problem, something related to Spyder, or simply my lack of expertise, but it seemed that Python required extensive manual tuning to fully utilize system resources.
 
-Remember the part in the lab log that I said "reworking is a bad news"?  <br />
-Well lets just say java is much better at handling data in the comparison to python, it automatically utilize all of my cores and I can easily set a max range when it comes to how much ram it can use.<br />
-But what python is good at is visualize the graph, in this area java is much worse than python at least in my opinion.<br />
+Let's liken the original data to a cake. Ideally, all of my 12 CPU cores should begin processing the cake simultaneously. However, without manual multithreading implementation, only a single core would be processing, while the remaining cores stood idle. This resulted in a significant delay before I could obtain any results. <br />
+In hindsight, adhering to the project description's advice—"Be sure to create small test files to test your code on. Doing your first experiments on the full graph is a waste of time"—would have been prudent.
 
-(yeah... future me here again, technically Java doesn't automatically use all cores unless the code is explicitly written to do so, however this single threaded code did utilized all my cpu core for some magical reason.)
+Anyway, to combat the issue, I tried implementing multithreading, it is like splitting the cake into several pieces and feeding each piece to different cores. Yet, I still encountered several issues. For instance, my 64GB RAM would fill up when processing a 7GB data file, leading to system freezing. Even after setting limits on the data chunks, the processing time was still slower than single-threading.
+Ultimately, I reverted to a single-threaded approach, rewriting everything in Java (since I didn't realize that the data part needed to be fixed in Java).
+
+I have previously mentioned in my lab log that "reworking is bad news," but in this context, Java outperformed Python in data handling. It made better use of my cores and allowed me to set a maximum RAM usage limit. <br />
+However, Python excels in graph visualization, an area where Java falls short, in my opinion.
+
+One anomaly I observed was that even though Java doesn't automatically use all cores unless explicitly programmed to do so, this single-threaded code did utilize all my CPU cores.
 ![1](https://github.com/scr0-0ge/Da3018-vt2023-project/blob/Patch-5/Lab%20paperwork/single%20threaded%20code%20uses%2060%25%20of%20my%20cpu.PNG)
 
-But anyway I was having a blast with this project, hope my experience could help any smart successors in the future who actually searched Da3018 project in github.
+Despite the challenges, I genuinely enjoyed working on this project. I hope that my experiences could provide insights for future students tackling the Da3018 project.
+
 
 
 ## Conclusion:
