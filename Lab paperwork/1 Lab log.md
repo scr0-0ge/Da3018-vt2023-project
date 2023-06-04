@@ -14,6 +14,12 @@
 I decide to add public int getTotalVertices and public int getTotalEdges so the code calculate total number of vertices and edges.
 Later print out the numbers.
 
+But something that worries me a little bit is that my result of total number of vertices is different compared to the python version of this project that I did in old lab log. <br />
+My java version gaves me Total number of vertices: 11393435 <br />
+My python version gaves me Total number of vertices: 11380820 <br />
+
+The problem with this is that all other result are exactly same if you compare the both version. But I just don't know which one is the correct answer.
+
 #### Lab report
 Details can be found in Lab report.
 
